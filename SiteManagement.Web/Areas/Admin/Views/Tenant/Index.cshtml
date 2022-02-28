@@ -1,0 +1,116 @@
+﻿@model SiteManagament.Core.Tenant
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Kullanıcı Bilgileri</h1>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-12">
+        <div class="card mb-4">
+            <div class="card-body">
+
+                @using (Html.BeginForm("Post", "Tenant", FormMethod.Post, new { }))
+                {
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Adı</label>
+                                    @Html.TextBoxFor(p => p.Name, new { @class = "form-control", @placeholder = "Adı Giriniz" })
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Soyadı</label>
+                                    @Html.TextBoxFor(p => p.Lastname, new { @class = "form-control", @placeholder = "Soyadı Giriniz" })
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">TC Kimlik No</label>
+                                    @Html.TextBoxFor(p => p.IdentificationNumber, new { @class = "form-control", @placeholder = "Tc Kimlik No Giriniz" })
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Email</label>
+                                    @Html.TextBoxFor(p => p.Email, new { @class = "form-control", @placeholder = "Email Giriniz" })
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Cep Telefonu</label>
+                                    @Html.TextBoxFor(p => p.Phone, new { @class = "form-control", @placeholder = "Cep Telefonu Giriniz" })
+                                </div>
+                            </td>
+                            <td>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Daire Seçiniz</label>
+                                   <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>A Sitesi 3. kat Daire:5</option>
+                                        <option>B Sitesi 3. kat Daire:5</option>
+                                        <option>C Sitesi 3. kat Daire:5</option>
+                                        <option>D Sitesi 3. kat Daire:5</option>
+                                        <option>E Sitesi 3. kat Daire:5</option>
+                                    </select>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <div class="custom-control custom-switch">
+                                        @Html.RadioButtonFor(m => m.IsHaveCar, "Araba mevcut mu ?")<label>Araba Mevcut Mu?</label>
+                                    
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(p => p.CarPlateNumber, new { @class = "form-control", @placeholder = "Plakasını Giriniz" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <div class="custom-control custom-radio">
+                                        @Html.RadioButtonFor(m => m.Role, "Admin")<label>Admin</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        @Html.RadioButtonFor(m => m.Role, "Kullanıcı")<label>Kullanıcı</label>
+                                    </div>
+
+                                </div>
+                            </td>
+                            <td>
+                                <input type="submit" class="btn btn-primary btn-block style="float:right;" />
+                            </td>
+                        </tr>
+                    </table>
+                }
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

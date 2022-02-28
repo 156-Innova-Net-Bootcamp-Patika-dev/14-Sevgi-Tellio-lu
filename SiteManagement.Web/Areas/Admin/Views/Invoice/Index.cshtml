@@ -1,0 +1,63 @@
+﻿@model SiteManagament.Core.Entity.Payment
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Fatura Ekle</h1>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-12">
+        <div class="card mb-4">
+            <div class="card-body">
+
+                @using (Html.BeginForm("Post", "Invoice", FormMethod.Post, new { }))
+                {
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Daire Numarası</label>
+                                    @Html.TextBoxFor(p => p.aparment.Id, new { @class = "form-control", @placeholder = "Daire Numarası Giriniz" })
+                                </div>
+
+                            </td>
+                          
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Daire Sahibi</label>
+                                    @Html.TextBoxFor(p => p.aparment.ApartmentOwner, new { @class = "form-control", @placeholder = "Daire Sahibini Giriniz" })
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Fatura Tutarı </label>
+                                    @Html.TextBoxFor(p => p.Price, new { @class = "form-control", @placeholder = "Tutar Giriniz" })
+
+                                </div>
+                              
+
+                            </td>
+                            
+                        </tr>
+                     </table>
+
+
+                }
+
+                <input type="submit" class="btn btn-primary btn-block style="float:right;" />
+
+            </div>
+        </div>
+
+    </div>
+</div>

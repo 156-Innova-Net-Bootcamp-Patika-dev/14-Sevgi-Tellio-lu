@@ -1,0 +1,74 @@
+﻿@model SiteManagament.Core.Apartment
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Daire Bilgileri</h1>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-12">
+        <div class="card mb-4">
+            <div class="card-body">
+
+                @using (Html.BeginForm("Post", "Apartment", FormMethod.Post, new { }))
+                {
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Daire Bloğu</label>
+                                    @Html.TextBoxFor(p => p.ApartmentBlock, new { @class = "form-control", @placeholder = "Dairenin Bloğunu Giriniz" })
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Daire Numarası</label>
+                                    @Html.TextBoxFor(p => p.ApartmentNumber, new { @class = "form-control", @placeholder = "Daire Numarası Giriniz" })
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Daire Sahibinin Adı</label>
+                                    @Html.TextBoxFor(p => p.ApartmentOwner, new { @class = "form-control", @placeholder = "Daire Sahibini Giriniz" })
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Daire Tipi</label>
+                                    @Html.TextBoxFor(p => p.ApartmentType, new { @class = "form-control", @placeholder = "Daire Tipini Giriniz" })
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Daire Durumu</label>
+                                    @Html.TextBoxFor(p => p.ApartmentStatus, new { @class = "form-control", @placeholder = "Daire Durumunu Giriniz" })
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+
+                }
+
+                <input type="submit" class="btn btn-primary btn-block style="float:right;" />
+
+            </div>
+        </div>
+
+    </div>
+</div>
